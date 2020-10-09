@@ -1,0 +1,233 @@
+2020-10-07 12:43:05,537 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 714 058a010000000000
+2020-10-07 12:43:05,538 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05
+2020-10-07 12:43:07,952 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05870100f4ec4d35
+2020-10-07 12:43:07,955 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 1c1 01062b2b2b000000
+2020-10-07 12:43:07,960 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_PDO_1 from 65, message CANOpenPDOPayload[pdo=CANOpenPDO[data={1,6,43,43,43,0,0,0}]]
+2020-10-07 12:43:07,961 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:07,962 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Could not find subscription matching TRANSMIT_PDO_1 and node 65
+-> 301 d701d00100002f00
+2020-10-07 12:43:11,807 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_2 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-41,1,-48,1,0,0,47,0}]]
+2020-10-07 12:43:11,807 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:11,808 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_2 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_2, node=1(0x1), cob=769(0x301)]
+pdo notification rpdo_0x300 [-41,1,-48,1,0,0,47,0]
+-> 201 d10140019401d901
+2020-10-07 12:43:14,986 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_1 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-47,1,64,1,-108,1,-39,1}]]
+2020-10-07 12:43:14,986 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:14,986 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_1 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_1, node=1(0x1), cob=513(0x201)]
+pdo notification rpdo_0x200 [-47,1,64,1,-108,1,-39,1]
+-> 714 05
+2020-10-07 12:43:15,781 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 714 058a010000000000
+2020-10-07 12:43:15,783 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05
+2020-10-07 12:43:18,972 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05870100f4ec4d35
+2020-10-07 12:43:18,975 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 301 dc01dc0100002f00
+2020-10-07 12:43:23,039 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_2 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-36,1,-36,1,0,0,47,0}]]
+2020-10-07 12:43:23,039 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:23,039 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_2 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_2, node=1(0x1), cob=769(0x301)]
+pdo notification rpdo_0x300 [-36,1,-36,1,0,0,47,0]
+-> 714 05
+2020-10-07 12:43:26,041 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 714 058a010000000000
+2020-10-07 12:43:26,044 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 201 e60140019701df01
+2020-10-07 12:43:27,018 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_1 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-26,1,64,1,-105,1,-33,1}]]
+2020-10-07 12:43:27,018 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:27,018 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_1 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_1, node=1(0x1), cob=513(0x201)]
+pdo notification rpdo_0x200 [-26,1,64,1,-105,1,-33,1]
+-> 701 05
+2020-10-07 12:43:29,993 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05870100f4ec4d35
+2020-10-07 12:43:29,996 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 1c1 0100030101010101
+2020-10-07 12:43:29,999 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_PDO_1 from 65, message CANOpenPDOPayload[pdo=CANOpenPDO[data={1,0,3,1,1,1,1,1}]]
+2020-10-07 12:43:29,999 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:29,999 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Could not find subscription matching TRANSMIT_PDO_1 and node 65
+-> 494 01f44f0101000000
+2020-10-07 12:43:33,686 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_PDO_4 from 20, message CANOpenPDOPayload[pdo=CANOpenPDO[data={1,-12,79,1,1,0,0,0}]]
+2020-10-07 12:43:33,686 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:33,686 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Could not find subscription matching TRANSMIT_PDO_4 and node 20
+-> 654 40f44f0200000000
+2020-10-07 12:43:33,888 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=62543,subindex=2]]]
+-> 5d4 43f44f02ce37a46f
+2020-10-07 12:43:33,891 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=true,indicated=true,address=IndexAddress[index=62543,subindex=2],payload=SDOInitiateExpeditedUploadResponse[data={-50,55,-92,111}]]]
+-> 654 a4f44f0440000000
+2020-10-07 12:43:33,895 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=BLOCK,request=SDOBlockRequest[block=SDOBlockData[flags=4,data={-12,79,4,64,0,0,0}]]]
+-> 5d4 c6f44f0423000000
+2020-10-07 12:43:33,898 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=BLOCK,response=SDOBlockResponse[block=SDOBlockData[flags=6,data={-12,79,4,35,0,0,0}]]]
+-> 654 a300000000000000
+2020-10-07 12:43:33,899 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=BLOCK,request=SDOBlockRequest[block=SDOBlockData[flags=3,data={0,0,0,0,0,0,0}]]]
+-> 5d4 01070a14212b0de2
+2020-10-07 12:43:33,901 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={7,10,20,33,43,13,-30}]]
+-> 5d4 020100002a010000
+2020-10-07 12:43:33,907 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=false,data={1,0,0,42,1,0}]]
+-> 5d4 03b90000002f0100
+2020-10-07 12:43:33,912 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={-71,0,0,0,47,1}]]
+-> 5d4 0400280200000100
+2020-10-07 12:43:33,917 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=false,data={0,40,2,0,0}]]
+2020-10-07 12:43:33,923 INFO  [pool-2-thread-1] org.apache.plc4x.java.canopen.readwrite.io.SDOAbortIO | Expected constant value 0 but got 5 for reserved field.
+-> 5d4 85000c0587cf0d0a
+2020-10-07 12:43:33,925 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=ABORT,response=SDOAbortResponse[abort=SDOAbort[address=IndexAddress[index=12,subindex=5],code=2278493450]]]
+-> 654 a205400000000000
+2020-10-07 12:43:33,926 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=BLOCK,request=SDOBlockRequest[block=SDOBlockData[flags=2,data={5,64,0,0,0,0,0}]]]
+-> 5d4 c1f5160000000000
+2020-10-07 12:43:33,927 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=BLOCK,response=SDOBlockResponse[block=SDOBlockData[flags=1,data={-11,22,0,0,0,0,0}]]]
+-> 654 a100000000000000
+2020-10-07 12:43:33,929 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=BLOCK,request=SDOBlockRequest[block=SDOBlockData[flags=1,data={0,0,0,0,0,0,0}]]]
+-> 714 05
+2020-10-07 12:43:36,302 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 714 058a010000000000
+2020-10-07 12:43:36,304 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 654 4050200400000000
+2020-10-07 12:43:36,677 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20512,subindex=4]]]
+-> 5d4 4150200406000000
+2020-10-07 12:43:36,680 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20512,subindex=4],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,683 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 0350012802000000
+2020-10-07 12:43:36,685 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,40,2,0,0}]]
+-> 654 4050200000000000
+2020-10-07 12:43:36,687 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20512,subindex=0]]]
+-> 5d4 4150200006000000
+2020-10-07 12:43:36,690 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20512,subindex=0],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,692 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 035001e301000000
+2020-10-07 12:43:36,694 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,-29,1,0,0}]]
+-> 654 4050200100000000
+2020-10-07 12:43:36,697 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20512,subindex=1]]]
+-> 5d4 4150200106000000
+2020-10-07 12:43:36,700 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20512,subindex=1],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,702 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 0350012b01000000
+2020-10-07 12:43:36,704 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,43,1,0,0}]]
+-> 654 4050200200000000
+2020-10-07 12:43:36,706 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20512,subindex=2]]]
+-> 5d4 4150200206000000
+2020-10-07 12:43:36,709 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20512,subindex=2],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,712 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 035001b900000000
+2020-10-07 12:43:36,714 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,-71,0,0,0}]]
+-> 654 4050200300000000
+2020-10-07 12:43:36,717 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20512,subindex=3]]]
+-> 5d4 4150200306000000
+2020-10-07 12:43:36,719 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20512,subindex=3],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,722 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 0350012f01000000
+2020-10-07 12:43:36,724 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,47,1,0,0}]]
+-> 654 40d0200200000000
+2020-10-07 12:43:36,727 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=53280,subindex=2]]]
+-> 5d4 41d0200206000000
+2020-10-07 12:43:36,729 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=53280,subindex=2],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,732 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 03502b0000000000
+2020-10-07 12:43:36,734 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,43,0,0,0,0}]]
+-> 654 40d0200000000000
+2020-10-07 12:43:36,737 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=53280,subindex=0]]]
+-> 5d4 41d0200006000000
+2020-10-07 12:43:36,739 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=53280,subindex=0],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,742 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 03502b0100000000
+2020-10-07 12:43:36,744 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,43,1,0,0,0}]]
+-> 654 40d0200100000000
+2020-10-07 12:43:36,747 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=53280,subindex=1]]]
+-> 5d4 41d0200106000000
+2020-10-07 12:43:36,749 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=53280,subindex=1],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,752 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 03502b0000000000
+2020-10-07 12:43:36,754 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,43,0,0,0,0}]]
+-> 654 40172d0400000000
+2020-10-07 12:43:36,756 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=5933,subindex=4]]]
+-> 5d4 41172d0406000000
+2020-10-07 12:43:36,759 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=5933,subindex=4],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,761 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 03500b2c65010000
+2020-10-07 12:43:36,764 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,11,44,101,1,0}]]
+-> 654 40012d0400000000
+2020-10-07 12:43:36,766 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=301,subindex=4]]]
+-> 5d4 41012d0406000000
+2020-10-07 12:43:36,769 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=301,subindex=4],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,771 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 03500a1402000000
+2020-10-07 12:43:36,774 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,10,20,2,0,0}]]
+-> 654 4050210000000000
+2020-10-07 12:43:36,776 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20513,subindex=0]]]
+-> 5d4 4150210006000000
+2020-10-07 12:43:36,779 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20513,subindex=0],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,783 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 035003d301000000
+2020-10-07 12:43:36,784 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,3,-45,1,0,0}]]
+-> 654 4050210100000000
+2020-10-07 12:43:36,787 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20513,subindex=1]]]
+-> 5d4 4150210106000000
+2020-10-07 12:43:36,789 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20513,subindex=1],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,792 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 0350014201000000
+2020-10-07 12:43:36,794 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,66,1,0,0}]]
+-> 654 4050210200000000
+2020-10-07 12:43:36,797 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=INITIATE_UPLOAD,request=SDOInitiateUploadRequest[address=IndexAddress[index=20513,subindex=2]]]
+-> 5d4 4150210206000000
+2020-10-07 12:43:36,799 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=INITIATE_UPLOAD,response=SDOInitiateUploadResponse[expedited=false,indicated=true,address=IndexAddress[index=20513,subindex=2],payload=SDOInitiateSegmentedUploadResponse[bytes=100663296]]]
+-> 654 6000000000000000
+2020-10-07 12:43:36,801 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_SDO from 84, message CANOpenSDORequest[command=SEGMENT_UPLOAD,request=SDOSegmentUploadRequest[toggle=false]]
+-> 5d4 0350019a01000000
+2020-10-07 12:43:36,804 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_SDO from 84, message CANOpenSDOResponse[command=SEGMENT_UPLOAD,response=SDOSegmentUploadResponse[toggle=false,last=true,data={80,1,-102,1,0,0}]]
+-> 201 ea0142019a01e401
+2020-10-07 12:43:39,061 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_1 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-22,1,66,1,-102,1,-28,1}]]
+2020-10-07 12:43:39,061 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:39,061 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_1 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_1, node=1(0x1), cob=513(0x201)]
+pdo notification rpdo_0x200 [-22,1,66,1,-102,1,-28,1]
+-> 301 e401ea0100003000
+2020-10-07 12:43:39,063 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_2 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-28,1,-22,1,0,0,48,0}]]
+2020-10-07 12:43:39,063 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:39,064 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_2 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_2, node=1(0x1), cob=769(0x301)]
+pdo notification rpdo_0x300 [-28,1,-22,1,0,0,48,0]
+-> 701 05
+2020-10-07 12:43:41,015 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05870100f4ec4d35
+2020-10-07 12:43:41,017 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 1c1 010101010103000b
+2020-10-07 12:43:41,020 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_PDO_1 from 65, message CANOpenPDOPayload[pdo=CANOpenPDO[data={1,1,1,1,1,3,0,11}]]
+2020-10-07 12:43:41,021 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:41,021 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Could not find subscription matching TRANSMIT_PDO_1 and node 65
+-> 714 05
+2020-10-07 12:43:46,563 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 714 058a010000000000
+2020-10-07 12:43:46,565 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 20, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05
+2020-10-07 12:43:52,033 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+-> 701 05870100f4ec4d35
+2020-10-07 12:43:52,036 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen HEARTBEAT from 1, message CANOpenHeartbeatPayload[state=OPERATIONAL]
+2020-10-07 12:43:52,040 INFO  [pool-2-thread-1] org.apache.plc4x.java.canopen.readwrite.io.CANOpenTimeIO | Expected constant value 0 but got 2 for reserved field.
+-> 100 d841f2827534
+2020-10-07 12:43:52,042 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TIME from 0, message CANOpenTimeSynchronization[timeOfDay=CANOpenTime[millis=226762536,days=30004]]
+-> 1c1 01062b2b2b000000
+2020-10-07 12:43:52,044 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen TRANSMIT_PDO_1 from 65, message CANOpenPDOPayload[pdo=CANOpenPDO[data={1,6,43,43,43,0,0,0}]]
+2020-10-07 12:43:52,044 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:52,044 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Could not find subscription matching TRANSMIT_PDO_1 and node 65
+-> 201 d80142019f01e901
+2020-10-07 12:43:52,107 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_1 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-40,1,66,1,-97,1,-23,1}]]
+2020-10-07 12:43:52,107 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:52,107 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_1 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_1, node=1(0x1), cob=513(0x201)]
+pdo notification rpdo_0x200 [-40,1,66,1,-97,1,-23,1]
+-> 301 e901d80100003000
+2020-10-07 12:43:52,110 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Decoded CANOpen RECEIVE_PDO_2 from 1, message CANOpenPDOPayload[pdo=CANOpenPDO[data={-23,1,-40,1,0,0,48,0}]]
+2020-10-07 12:43:52,110 INFO  [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Broadcasting PDO to subscribers
+2020-10-07 12:43:52,111 TRACE [pool-2-thread-1] org.apache.plc4x.java.can.protocol.CANOpenProtocolLogic | Dispatching notification RECEIVE_PDO_2 for node 1 to CANOpenSubscriptionHandle [service=RECEIVE_PDO_2, node=1(0x1), cob=769(0x301)]
+pdo notification rpdo_0x300 [-23,1,-40,1,0,0,48,0]

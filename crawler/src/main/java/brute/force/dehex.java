@@ -1,0 +1,14 @@
+package brute.force;
+
+import org.apache.commons.codec.DecoderException;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.io.HexDump;
+
+public class dehex {
+
+  public static void main(String[] args) throws DecoderException {
+    String text = "6000000000020000000000009a6100006d0d384000000000010000501000000012019b5014c0005812069b5013c1005812079b5013c2005812089b5013c30058110000002010055822005020a100522022015020a101522022025020a102522022035020a103522022045020a10452202405502024065020240750202408502024095020240a5020240b5020240c5020240d5020240e5020240f50202100000000000000";
+
+    System.out.println(new String(Hex.decodeHex(text.toCharArray())));
+  }
+}
