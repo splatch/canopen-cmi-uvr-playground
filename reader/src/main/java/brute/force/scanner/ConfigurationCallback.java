@@ -5,8 +5,9 @@ import brute.force.scanner.inout.DigitalOutput;
 import brute.force.scanner.inout.TAOutput;
 import brute.force.scanner.unit.UVRUnits;
 import brute.force.scanner.unit.Unit;
-import java.util.LinkedHashMap;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.function.Function;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.plc4x.java.api.PlcConnection;
 import org.apache.plc4x.java.api.messages.PlcSubscriptionEvent;
@@ -21,9 +22,11 @@ public class ConfigurationCallback extends PDOConsumer {
 
   private final Logger logger = LoggerFactory.getLogger(ConfigurationCallback.class);
   private final PlcConnection connection;
+  private final Map<OutputKey, TAOutput> outputs;
 
-  public ConfigurationCallback(PlcConnection connection) {
+  public ConfigurationCallback(PlcConnection connection, Map<OutputKey, TAOutput> outputs) {
     this.connection = connection;
+    this.outputs = outputs;
   }
 
   @Override
@@ -43,9 +46,19 @@ public class ConfigurationCallback extends PDOConsumer {
           subIndex, Hex.encodeHexString(raw), unit);
 
       if (subIndex <= 32) { // analog
-        scan(sender, new AnalogOutput(unit, subIndex));
+        final short index = (short) (subIndex - 1);
+        final IndexAddress nameAddress = new IndexAddress(0x2280 + 0xf, index);
+        Function<String, TAOutput> outputFunction = ((Function<String, TAOutput>) (name) -> new AnalogOutput(name, unit, index)).andThen(output ->
+            outputs.put(OutputKey.analog(index), output)
+        );
+        scan(sender, outputFunction, nameAddress);
       } else if (subIndex <= 64) { // digital
-        scan(sender, new DigitalOutput(unit, (short) (subIndex - 32)));
+        final short index = (short) (subIndex - 33);
+        final IndexAddress nameAddress = new IndexAddress(0x2380 + 0xf, index);
+        Function<String, TAOutput> outputFunction = ((Function<String, TAOutput>) (name) -> new DigitalOutput(name, unit, index)).andThen(output ->
+            outputs.put(OutputKey.digital(index), output)
+        );
+        scan(sender, outputFunction, nameAddress);
       } else {
         logger.error("UVR reported unsupported output 0x{}/0x{}", Integer.toHexString(indexAddress.getIndex()), Integer.toHexString(subIndex));
       }
@@ -54,27 +67,17 @@ public class ConfigurationCallback extends PDOConsumer {
     }
   }
 
-  private void scan(short nodeId, TAOutput output) {
+  private void scan(short nodeId, Function<String, ?> output, IndexAddress index) {
     logger.info("{} scan", output);
 
-//    Map<String, byte[]> values = new LinkedHashMap<>();
-//
-//    UVR16Printer.readBytes(connection, nodeId, output.getName()).handle((data, e) -> values.put("name", data))
-//      .thenCombine(UVR16Printer.readBytes(connection, nodeId, output.getSourceType()), (f, s) -> values.put("source type", f))
-//      .thenCombine(UVR16Printer.readBytes(connection, nodeId, output.getSourceObject()), (f, s) -> values.put("source object", s))
-//      .thenCombine(UVR16Printer.readBytes(connection, nodeId, output.getSourceVariable()), (f, s) -> values.put("source variable", f))
-//      .whenComplete((f, e) -> {
-//        System.out.println(output + " " + values);
-//      });
-
-    UVR16Printer.readBytes(connection, nodeId, output.getName()).whenComplete((type, e) -> print(type, output + " name"));
-//    UVR16Printer.readBytes(connection, nodeId, output.getSourceType()).whenComplete((type, e) -> print(type, output + " source type"));
-//    UVR16Printer.readBytes(connection, nodeId, output.getSourceObject()).whenComplete((object, e) -> print(object, output + " source object"));
-//    UVR16Printer.readBytes(connection, nodeId, output.getSourceVariable()).whenComplete((variable, e) -> print(variable, output + " source variable"));
-  }
-
-  private void print(byte[] type, String prefix) {
-    System.out.println(prefix + " " + new String(type) + "(0x" + Hex.encodeHexString(type) + ")");
+    UVR16Printer.readBytes(connection, nodeId, index).whenComplete((type, e) -> {
+      if (e != null) {
+        e.printStackTrace();
+        return;
+      }
+      final String label = new String(type, StandardCharsets.UTF_16LE);
+      output.apply(label);
+    });
   }
 
 }

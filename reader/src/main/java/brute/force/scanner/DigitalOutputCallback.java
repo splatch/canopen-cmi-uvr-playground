@@ -9,6 +9,11 @@ import org.slf4j.LoggerFactory;
 public class DigitalOutputCallback extends PDOConsumer {
 
   private final Logger logger = LoggerFactory.getLogger(DigitalOutputCallback.class);
+  private final ValueListener listener;
+
+  public DigitalOutputCallback(ValueListener listener) {
+    this.listener = listener;
+  }
 
   @Override
   public void accept(PlcSubscriptionEvent plcSubscriptionEvent) {
@@ -17,6 +22,7 @@ public class DigitalOutputCallback extends PDOConsumer {
     try {
       for (int index = 0; index < 32; index++) {
         logger.info("Digital Output {}={}", index, buffer.readBit());
+        listener.digital(index, buffer.readBit());
       }
     } catch (ParseException e) {
       e.printStackTrace();

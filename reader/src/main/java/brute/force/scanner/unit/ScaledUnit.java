@@ -21,7 +21,9 @@ class ScaledUnit implements Unit {
   @Override
   public Object parse(ReadBuffer buffer) {
     try {
-      return (signed ? buffer.readInt(16) : buffer.readUnsignedInt(16)) * scale;
+      final short value = signed ? buffer.readShort(16) : buffer.readUnsignedShort(16);
+      System.out.println("Read value " + value + " " + Integer.toHexString(value));
+      return value * scale;
     } catch (ParseException e) {
       e.printStackTrace();
       return null;

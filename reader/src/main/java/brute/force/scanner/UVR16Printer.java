@@ -1,7 +1,10 @@
 package brute.force.scanner;
 
+import brute.force.scanner.inout.TAOutput;
 import java.util.Collection;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutionException;
 import org.apache.plc4x.java.PlcDriverManager;
 import org.apache.plc4x.java.api.PlcConnection;
@@ -15,6 +18,8 @@ import org.apache.plc4x.java.can.context.CANOpenDriverContext;
 import org.apache.plc4x.java.can.listener.Callback;
 import org.apache.plc4x.java.canopen.readwrite.IndexAddress;
 import org.apache.plc4x.java.socketcan.readwrite.SocketCANFrame;
+import org.apache.plc4x.java.spi.generation.ParseException;
+import org.apache.plc4x.java.spi.generation.ReadBuffer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
@@ -81,20 +86,54 @@ public class UVR16Printer {
     //IntStream.range(0, 2).forEach(index -> System.out.println(intAndHex(CANOpenService.TRANSMIT_PDO_3.getMin() + nodeId + (index * 0x80))));
     //IntStream.range(0, 2).forEach(index -> System.out.println(intAndHex(CANOpenService.TRANSMIT_PDO_4.getMin() + nodeId + (index * 0x80))));
 
-    subscribe(connection, "tpdo_0x180", "TRANSMIT_PDO_1:" + nodeId + ":RECORD", new DigitalOutputCallback()); // digital
+    Map<OutputKey, TAOutput> outputs = new ConcurrentHashMap<OutputKey, TAOutput>(64) {
+      @Override
+      public TAOutput put(OutputKey key, TAOutput value) {
+        System.out.println("Discovered new output " + value + " for key " + key);
+        return super.put(key, value);
+      }
+    };
+    final ValueListener valueListener = new ValueListener() {
 
-    subscribe(connection, "rpdo_0x200", "RECEIVE_PDO_1:" + nodeId + ":RECORD", new AnalogOutputCallback(0));
-    subscribe(connection, "tpdo_0x280", "TRANSMIT_PDO_2:" + nodeId + ":RECORD", new AnalogOutputCallback(4));
-    subscribe(connection, "rpdo_0x300", "RECEIVE_PDO_2:" + nodeId + ":RECORD", new AnalogOutputCallback(8));
-    subscribe(connection, "tpdo_0x380", "TRANSMIT_PDO_3:" + nodeId + ":RECORD", new AnalogOutputCallback(12));
+      @Override
+      public void analog(int index, ReadBuffer value) throws ParseException {
+        final OutputKey key = OutputKey.analog(index);
+        if (outputs.containsKey(key)) {
+          final TAOutput output = outputs.get(key);
+          final Object result = output.getUnit().parse(value);
+          System.out.println("Updating output " + output + " to " + result);
+        } else {
+          // read two bytes of data to move pointer
+          System.out.println("Unknown analog output " + key);
+          value.readUnsignedInt(16);
+        }
+      }
 
-    subscribe(connection, "rpdo_0x240", "RECEIVE_PDO_1:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(16));
-    subscribe(connection, "tpdo_0x2c0", "TRANSMIT_PDO_2:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(20));
-    subscribe(connection, "rpdo_0x340", "RECEIVE_PDO_2:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(24));
-    subscribe(connection, "tpdo_0x3c0", "TRANSMIT_PDO_3:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(28));
-    subscribe(connection, "tpdo_0x3c0", "TRANSMIT_PDO_3:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(28));
+      @Override
+      public void digital(int index, boolean value) {
+        final OutputKey key = OutputKey.digital(index);
+        if (outputs.containsKey(key)) {
+          final TAOutput output = outputs.get(key);
+          System.out.println("Updating digital output " + output + " to " + value);
+        } else {
+          System.out.println("Unknown digital output " + key);
+        }
+      }
+    };
+    subscribe(connection, "tpdo_0x180", "TRANSMIT_PDO_1:" + nodeId + ":RECORD", new DigitalOutputCallback(valueListener)); // digital
 
-    subscribe(connection, "tpdo_0x480", "TRANSMIT_PDO_4:" + nodeId + ":RECORD", new ConfigurationCallback(connection));
+    subscribe(connection, "rpdo_0x200", "RECEIVE_PDO_1:" + nodeId + ":RECORD", new AnalogOutputCallback(valueListener, 0));
+    subscribe(connection, "tpdo_0x280", "TRANSMIT_PDO_2:" + nodeId + ":RECORD", new AnalogOutputCallback(valueListener, 4));
+    subscribe(connection, "rpdo_0x300", "RECEIVE_PDO_2:" + nodeId + ":RECORD", new AnalogOutputCallback(valueListener, 8));
+    subscribe(connection, "tpdo_0x380", "TRANSMIT_PDO_3:" + nodeId + ":RECORD", new AnalogOutputCallback(valueListener, 12));
+
+    subscribe(connection, "rpdo_0x240", "RECEIVE_PDO_1:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(valueListener, 16));
+    subscribe(connection, "tpdo_0x2c0", "TRANSMIT_PDO_2:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(valueListener, 20));
+    subscribe(connection, "rpdo_0x340", "RECEIVE_PDO_2:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(valueListener, 24));
+    subscribe(connection, "tpdo_0x3c0", "TRANSMIT_PDO_3:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(valueListener, 28));
+    subscribe(connection, "tpdo_0x3c0", "TRANSMIT_PDO_3:" + nodeId + 0x40 + ":RECORD", new AnalogOutputCallback(valueListener, 28));
+
+    subscribe(connection, "tpdo_0x480", "TRANSMIT_PDO_4:" + nodeId + ":RECORD", new ConfigurationCallback(connection, outputs));
 
     System.out.println("Send MPDO to 0x480 address");
     connection.writeRequestBuilder()
@@ -142,7 +181,6 @@ public class UVR16Printer {
     }
   }
 
-
   private static String readString(PlcConnection connection, int nodeId, int index,
       int subindex) {
     PlcReadRequest request = connection.readRequestBuilder()
@@ -163,40 +201,40 @@ public class UVR16Printer {
   }
 
   static CompletableFuture<byte[]> readBytes(PlcConnection connection, int nodeId, int index, int subindex) {
-    try (final MDCCloseable mdc = MDC.putCloseable("field", "SDO:" + Integer.toHexString(index) + "/" + Integer.toHexString(subindex))) {
-      System.out.println("---> Request " + intAndHex(index) + "/" + intAndHex(subindex) + " from " + nodeId);
+    //System.out.println("---> Request " + intAndHex(index) + "/" + intAndHex(subindex) + " from " + nodeId);
 
-      String fieldExpression = "SDO:" + nodeId + ":0x" + Integer.toHexString(index) + "/0x" + Integer.toHexString(subindex) + ":RECORD";
-      PlcReadRequest request = connection.readRequestBuilder()
+    String fieldExpression =
+        "SDO:" + nodeId + ":0x" + Integer.toHexString(index) + "/0x" + Integer
+            .toHexString(subindex) + ":RECORD";
+    PlcReadRequest request = connection.readRequestBuilder()
         .addItem("record", fieldExpression)
         .build();
 
-      LOGGER.info("SDO request {}", fieldExpression);
+    LOGGER.info("SDO request {}", fieldExpression);
 
-      return request.execute().thenApply(response -> {
-        System.out.println("<--- Response " + intAndHex(index) + "/" + intAndHex(subindex) + " from " + nodeId);
-        Object recordObj = response.getObject("record");
-        //LOGGER.info("SDO Answer {}, payload type: {}", fieldExpression, (recordObj != null ? recordObj.getClass() : "<unknown>"));
+    return request.execute().thenApply(response -> {
+      //System.out.println("<--- Response " + intAndHex(index) + "/" + intAndHex(subindex) + " from " + nodeId);
+      Object recordObj = response.getObject("record");
+      //LOGGER.info("SDO Answer {}, payload type: {}", fieldExpression, (recordObj != null ? recordObj.getClass() : "<unknown>"));
 
-        if (recordObj instanceof Collection) {
-          Collection<PlcValue> record = (Collection<PlcValue>) recordObj;
-          byte[] data = new byte[record.size()];
-          int pos = 0;
-          for (PlcValue val : record) {
-            if (val instanceof PlcSINT) {
-              data[pos++] = val.getByte();
-            } else if (val instanceof PlcBYTE) {
-              data[pos++] = (byte) ((PlcBYTE) val).getBYTE();
-            } else {
-              LOGGER.error("Unknown value type " + val.getClass());
-            }
+      if (recordObj instanceof Collection) {
+        Collection<PlcValue> record = (Collection<PlcValue>) recordObj;
+        byte[] data = new byte[record.size()];
+        int pos = 0;
+        for (PlcValue val : record) {
+          if (val instanceof PlcSINT) {
+            data[pos++] = val.getByte();
+          } else if (val instanceof PlcBYTE) {
+            data[pos++] = (byte) ((PlcBYTE) val).getBYTE();
+          } else {
+            LOGGER.error("Unknown value type " + val.getClass());
           }
-
-          return data;
         }
-        return new byte[0];
-      });
-    }
+
+        return data;
+      }
+      return new byte[0];
+    });
   }
 
   private static String intAndHex(int val) {
